@@ -16,7 +16,7 @@ try
     precoPorHora = Convert.ToDecimal(Console.ReadLine());
 
 }
-catch (Exception ex)
+catch (Exception)
 {
     throw new Exception("Você digitou algo errado. Tente novamente mais tarde!");
 }
