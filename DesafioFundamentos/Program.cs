@@ -6,12 +6,22 @@ Console.OutputEncoding = System.Text.Encoding.UTF8;
 decimal precoInicial = 0;
 decimal precoPorHora = 0;
 
-Console.Write("Seja bem vindo ao sistema de estacionamento!\n" +
+try
+{
+    Console.Write("Seja bem vindo ao sistema de estacionamento!\n" +
                   "Digite o preço inicial: ");
-precoInicial = Convert.ToDecimal(Console.ReadLine());
+    precoInicial = Convert.ToDecimal(Console.ReadLine());
 
-Console.Write("Agora digite o preço por hora: ");
-precoPorHora = Convert.ToDecimal(Console.ReadLine());
+    Console.Write("Agora digite o preço por hora: ");
+    precoPorHora = Convert.ToDecimal(Console.ReadLine());
+
+}
+catch (Exception ex)
+{
+    throw new Exception("Você digitou algo errado. Tente novamente mais tarde!");
+}
+
+
 
 // Instancia a classe Estacionamento, já com os valores obtidos anteriormente
 Estacionamento es = new Estacionamento(precoInicial, precoPorHora);
@@ -41,11 +51,13 @@ while (exibirMenu)
         case "2":
             Console.Clear();
             es.RemoverVeiculo();
+            Thread.Sleep(1000);
             break;
 
         case "3":
             Console.Clear();
             es.ListarVeiculos();
+            Thread.Sleep(1000);
             break;
 
         case "4":
@@ -56,6 +68,7 @@ while (exibirMenu)
 
         default:
             Console.WriteLine("Opção inválida");
+            Thread.Sleep(1000);
             break;
     }
 
