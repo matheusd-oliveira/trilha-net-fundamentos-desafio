@@ -32,18 +32,24 @@ while (exibirMenu)
     switch (Console.ReadLine())
     {
         case "1":
+            Console.Clear();
             es.AdicionarVeiculo();
+            Thread.Sleep(1000);
+            Console.Clear();
             break;
 
         case "2":
+            Console.Clear();
             es.RemoverVeiculo();
             break;
 
         case "3":
+            Console.Clear();
             es.ListarVeiculos();
             break;
 
         case "4":
+            Console.Clear();
             exibirMenu = false;
             Environment.Exit(0);
             break;
@@ -54,7 +60,6 @@ while (exibirMenu)
     }
 
     Console.WriteLine("Pressione uma tecla para continuar");
-    Console.ReadLine();
+    Console.ReadKey();
 }
 
-Console.WriteLine("O programa se encerrou");
