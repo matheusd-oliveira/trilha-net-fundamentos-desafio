@@ -67,6 +67,7 @@ while (exibirMenu)
             break;
 
         default:
+            Console.Clear();
             Console.WriteLine("Opção inválida");
             Thread.Sleep(1000);
             break;
